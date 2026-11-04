@@ -122,7 +122,8 @@ Artifacts are written to `Models/`:
 
 The pipeline supports three backbones. Comparison runs never overwrite the
 production model — they are isolated under `Models/compare/<backbone>/` and
-accumulated in `Models/comparison_results.csv`.
+accumulated in `Models/comparison_results.csv`. The comparison models are not
+committed (each is 14-31 MB); re-running the loop below regenerates them.
 
 ```bash
 for bb in efficientnetb2 mobilenetv3 resnet50; do
@@ -236,7 +237,7 @@ solar-panel-dust-xai/
 ├── requirements.txt            # Flask + TF + XAI deps
 ├── runtime.txt                 # Python 3.12 (Streamlit Cloud)
 ├── Models/                     # svm_classifier.pkl, scaler.pkl, meta, caches
-│   └── compare/<backbone>/     # isolated backbone-comparison artifacts
+│   └── compare/<backbone>/     # comparison artifacts (not committed)
 ├── figures/                    # all generated plots (see §8)
 ├── streamlit_app/
 │   ├── app.py                  # Streamlit app (classification + Grad-CAM + DINO boxes)

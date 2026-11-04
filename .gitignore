@@ -12,6 +12,7 @@ venv/
 # training caches (deployed .pkl models are tracked)
 *.npz
 Models/*.h5
+Models/compare/
 
 # datasets (regenerable)
 data/
