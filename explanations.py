@@ -315,7 +315,7 @@ def overlay_heatmap(image, heatmap, alpha=0.55, cmap_name="jet"):
         colormap = None
 
     h_resized = np.asarray(Image.fromarray(np.uint8(255 * np.clip(heatmap, 0, 1))).resize(
-        (image.shape[1], image.shape[0]), Image.BILINEAR)) / 255.0
+        (image.shape[1], image.shape[0]), Image.Resampling.BILINEAR)) / 255.0
 
     if colormap is not None:
         rgb = colormap(h_resized)[:, :, :3]
