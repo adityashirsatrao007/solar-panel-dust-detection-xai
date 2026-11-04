@@ -27,3 +27,7 @@ static/explain/
 
 # OS
 .DS_Store
+
+# local agent log and runtime logs
+.agent-progress.md
+logs/
